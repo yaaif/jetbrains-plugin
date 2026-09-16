@@ -9,7 +9,6 @@
   <depends>com.intellij.modules.platform</depends>
 
   <extensions defaultExtensionNs="com.intellij">
-    <customProtocolHandler implementation="ai.yaaif.jetbrains.HandoffProtocolHandler" />
     <notificationGroup id="YAAIF Platform" displayType="BALLOON" isLogByDefault="false" />
   </extensions>
 
