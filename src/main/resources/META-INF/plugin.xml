@@ -1,0 +1,24 @@
+<idea-plugin>
+  <id>ai.yaaif.jetbrains</id>
+  <name>YAAIF Platform</name>
+  <vendor url="https://yaaif.ai">YAAIF</vendor>
+  <description><![CDATA[
+    Connects JetBrains AI Assistant to the YAAIF platform and receives Admin UI handoffs.
+  ]]></description>
+
+  <depends>com.intellij.modules.platform</depends>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <customProtocolHandler implementation="ai.yaaif.jetbrains.HandoffProtocolHandler" />
+    <notificationGroup id="YAAIF Platform" displayType="BALLOON" isLogByDefault="false" />
+  </extensions>
+
+  <actions>
+    <action id="ai.yaaif.jetbrains.ConfigureMcpBridgeAction"
+            class="ai.yaaif.jetbrains.ConfigureMcpBridgeAction"
+            text="YAAIF: Configure MCP Bridge"
+            description="Open the user-level MCP configuration for JetBrains AI Assistant">
+      <add-to-group group-id="ToolsMenu" anchor="last" />
+    </action>
+  </actions>
+</idea-plugin>
