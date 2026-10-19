@@ -19,5 +19,11 @@
             description="Open the user-level MCP configuration for JetBrains AI Assistant">
       <add-to-group group-id="ToolsMenu" anchor="last" />
     </action>
+    <action id="ai.yaaif.jetbrains.OpenGovernanceAction"
+            class="ai.yaaif.jetbrains.OpenGovernanceAction"
+            text="YAAIF: Governance Agent"
+            description="Start a permission-aware tenant governance conversation in AI Assistant">
+      <add-to-group group-id="ToolsMenu" anchor="last" />
+    </action>
   </actions>
 </idea-plugin>

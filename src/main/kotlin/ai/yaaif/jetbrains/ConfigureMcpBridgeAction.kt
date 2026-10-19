@@ -7,8 +7,8 @@ import com.intellij.openapi.ide.CopyPasteManager
 import java.awt.datatransfer.StringSelection
 
 private const val MCP_ENTRY = """{
-  \"command\": \"npx\",
-  \"args\": [\"-y\", \"@yaaif/platform-mcp@1.3.5\", \"--client\", \"intellij\"]
+  "command": "npx",
+  "args": ["-y", "@yaaif/platform-mcp@1.3.8", "--client", "intellij"]
 }"""
 
 class ConfigureMcpBridgeAction : AnAction() {
