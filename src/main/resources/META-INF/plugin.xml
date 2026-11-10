@@ -19,6 +19,12 @@
             description="Open the user-level MCP configuration for JetBrains AI Assistant">
       <add-to-group group-id="ToolsMenu" anchor="last" />
     </action>
+    <action id="ai.yaaif.jetbrains.OpenWorkflowAction"
+            class="ai.yaaif.jetbrains.OpenWorkflowAction"
+            text="YAAIF: Platform Workflow"
+            description="Start a bundled YAAIF authoring or operations workflow in AI Assistant">
+      <add-to-group group-id="ToolsMenu" anchor="last" />
+    </action>
     <action id="ai.yaaif.jetbrains.OpenGovernanceAction"
             class="ai.yaaif.jetbrains.OpenGovernanceAction"
             text="YAAIF: Governance Agent"

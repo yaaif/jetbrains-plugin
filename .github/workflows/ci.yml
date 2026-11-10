@@ -1,0 +1,29 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  plugin:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+      - uses: gradle/actions/setup-gradle@v4
+      - run: ./gradlew build --no-daemon
+      - name: Check release contract
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          contract = json.loads(Path("plugin-contract.json").read_text())
+          assert f'version = "{contract["pluginVersions"]["intellij"]}"' in Path("build.gradle.kts").read_text()
+          assert contract["mcpPackage"] in Path("src/main/kotlin/ai/yaaif/jetbrains/ConfigureMcpBridgeAction.kt").read_text()
+          for skill in contract["coreSkills"]:
+              assert Path("src/main/resources/skills", skill, "SKILL.md").is_file(), skill
+          PY

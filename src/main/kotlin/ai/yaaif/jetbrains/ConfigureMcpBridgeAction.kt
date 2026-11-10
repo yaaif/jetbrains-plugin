@@ -8,7 +8,7 @@ import java.awt.datatransfer.StringSelection
 
 private const val MCP_ENTRY = """{
   "command": "npx",
-  "args": ["-y", "@yaaif/platform-mcp@1.3.8", "--client", "intellij"]
+  "args": ["-y", "@yaaif/platform-mcp@1.7.0", "--client", "intellij"]
 }"""
 
 class ConfigureMcpBridgeAction : AnAction() {
